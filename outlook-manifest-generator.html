@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outlook Manifest Generator</title>
+  </head>
+
+  <body>
+    <pre id="manifest-content"></pre>
+
+    <script src="manifest-generator.js"></script>
+
+    <script>
+      (async () => {
+        const manifest = await generateManifest('assets/manifest.outlook.xml', 'assets/version.json');
+        document.getElementById('manifest-content').textContent = manifest;
+      })();
+    </script>
+  </body>
+</html>
